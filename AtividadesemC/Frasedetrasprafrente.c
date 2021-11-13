@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-//João Carlos Barros Almeida da silva
+//Digitar frase de tras pra frente
 
 int main(void) { 
  	
