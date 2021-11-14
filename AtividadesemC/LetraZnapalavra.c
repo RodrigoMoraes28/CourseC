@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-//João Carlos Barros Almeida da silva
 
 int main(void) {
 	
