@@ -2,8 +2,7 @@
 #include <string.h>
 #include <locale.h>
 
-//Professor: Oberdan Rocha pinheiro
-//João Carlos Barros Almeida da silva
+
 
 int main(void) {
 
@@ -19,7 +18,7 @@ int main(void) {
     printf("a : ");
     int i;
 	for( i = 0 ; i < l ; i++){
-	 	if(frase[i] == 'a' || frase[i] == 'A' || frase[i] == 'á' || frase[i] == 'à' || frase == 'ã' || frase == 'â'){
+	 	if(frase[i] == 'a' || frase[i] == 'A' || frase[i] == 'Ã¡' || frase[i] == 'Ã ' || frase == 'Ã£' || frase == 'Ã¢'){
 	 		printf("*");
 			cont++;
 		}
@@ -30,7 +29,7 @@ int main(void) {
 	cont=0;
     printf("e : ");
 	for(i = 0 ; i < l ; i++){
-	 	if(frase[i] == 'e' || frase[i] == 'E'|| frase[i] == 'é' || frase[i] == 'è' || frase == 'ê'|| frase[i] == 'É'|| frase[i] == 'È'|| frase[i] == 'Ê'){
+	 	if(frase[i] == 'e' || frase[i] == 'E'|| frase[i] == 'Ã©' || frase[i] == 'Ã¨' || frase == 'Ãª'|| frase[i] == 'Ã‰'|| frase[i] == 'Ãˆ'|| frase[i] == 'ÃŠ'){
 	 		printf("*");
 			cont++;
 		}
@@ -40,7 +39,7 @@ int main(void) {
     cont=0;
     printf("i : ");
 	for(i = 0 ; i < l ; i++){
-	 	if(frase[i] == 'i' || frase[i] == 'I'|| frase[i] == 'í' || frase[i] == 'ì' || frase == 'î'||frase[i] == 'Ì'||frase[i] == 'Í'||frase[i] == 'Î'){
+	 	if(frase[i] == 'i' || frase[i] == 'I'|| frase[i] == 'Ã­' || frase[i] == 'Ã¬' || frase == 'Ã®'||frase[i] == 'ÃŒ'||frase[i] == 'Ã'||frase[i] == 'ÃŽ'){
 	 		printf("*");
 			cont++;
 		}
@@ -50,7 +49,7 @@ int main(void) {
 	cont=0;
     printf("o : ");
 	for(i = 0 ; i < l ; i++){
-	 	if(frase[i] == 'o' || frase[i] == 'O'|| frase[i] == 'ó' || frase[i] == 'ò' || frase == 'õ' || frase == 'ô' || frase[i] == 'Ó'|| frase[i] == 'Ò'|| frase[i] == 'Õ'||frase[i] == 'Ô'){
+	 	if(frase[i] == 'o' || frase[i] == 'O'|| frase[i] == 'Ã³' || frase[i] == 'Ã²' || frase == 'Ãµ' || frase == 'Ã´' || frase[i] == 'Ã“'|| frase[i] == 'Ã’'|| frase[i] == 'Ã•'||frase[i] == 'Ã”'){
 	 		printf("*");
 			cont++;
 		}
@@ -60,7 +59,7 @@ int main(void) {
 	cont=0;
     printf("u : ");
 	for(i = 0 ; i < l ; i++){
-	 	if(frase[i] == 'u' || frase[i] == 'U'||frase[i] == 'ú'||frase[i] == 'ù'||frase[i] == 'û'||frase[i] == 'Ú'||frase[i] == 'Ù'||frase[i] == 'Û'){
+	 	if(frase[i] == 'u' || frase[i] == 'U'||frase[i] == 'Ãº'||frase[i] == 'Ã¹'||frase[i] == 'Ã»'||frase[i] == 'Ãš'||frase[i] == 'Ã™'||frase[i] == 'Ã›'){
 	 		printf("*");
 			cont++;
 		}
