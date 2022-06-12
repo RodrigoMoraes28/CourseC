@@ -1,0 +1,83 @@
+Texto Sobre Cadeia de Caracteres
+Para armazenar textos, as linguagens de programação usam o tipo de variável chamada de String. Uma variável do tipo String armazena textos. Entretanto, todavia, porém, no C não existe o tipo String, como ocorre com o int e float, para inteiros e fracionários. Para armazenar textos em C usamos uma cadeia de caracteres.
+
+Uma Cadeia de Caracteres é um vetor do tipo char. É dessa forma que trabalhamos com textos na linguagem C. 
+
+Nas demais linguagens de programação, existe um tipo String. Como o C foi uma das primeiras linguagem de programação, não foi definida um tipo específico para String.
+
+Para declarar uma cadeia de caracteres vazia fazemos dessa forma: char frase[100]; Observe que é igual como fazemos para um vetor do tipo int/float. De novo, uma cadeia de caracteres simplesmente é um vetor do tipo char.
+
+Continuando, com o código char frase[100]; estamos criando uma cadeia de caracteres de tamanho 100. Podemos instancia-la de 4 formas diferentes:
+
+1 - Inserindo carácter a carácter em cada índice do vetor:
+
+char frase[100];
+
+frase[0] = 'P';
+
+frase[1] = 'r';
+
+frase[2] = 'o';
+
+frase[3] = 'v';
+
+frase[4] = 'a';
+
+frase[5] = '\0';
+
+Repare que na posição 5 inserimos o carácter '\0' que representa o final do texto dentro da cadeia de caracteres. Esse caracter '\0' é obrigatório para que possamos saber o tamanho do texto dentro da cadeia. Repare que criamos nosso vetor de tamanho 100 mas temos apenas a palavra "Prova" dentro do vetor. Esse caracter '\0' é usado exatamente para indicar o final do texto dentro da cadeia.
+
+2 - Usando as chaves {}:
+
+char frase[100] = {'P', 'r', 'o', 'v', 'a', '\0'};
+
+3 - Usando aspas duplas:
+
+char frase[] = "Prova";
+
+char frase[100] = "Prova";
+
+Nessa terceira forma, não precisamos colocar o caracter de final da cadeia '\0'. A linguagem já insere automaticamente. Aqui temos duas opções, na primeira não inserimos o tamanho do vetor dentro dos colchetes. O tamanho do vetor será o tamanho da frase dentro das aspas duplas mais uma unidade para o caracter de final da cadeia. Nesse exemplo, o tamanho será 6. Na segunda inserimos o tamanho do vetor dentro dos colchetes. O tamanho do vetor será o valor indicado dentro dos colchetes.
+
+4 - Usando a função scanf:
+
+Quando usamos uma cadeia de caracter dentro da função scanf, não precisamos usar o operador & pois o nome do vetor já é um ponteiro com o endereço de memória para a primeira posição do vetor. O caracter dentro das aspas dupla será o s, como mostrado no exemplo abaixo:
+
+scanf("%s", frase);
+
+Infelizmente, usando a função scanf dessa maneira ele apenas captura a primeira palavra que o usuário digitar e não todo o texto. Esse problema acontece devido ao espaço em branco, usando apenas "%s" no scanf, ele entende que deve apenas capturar os primeiros caracteres até encontrar um espaço em branco.
+
+Para que possamos capturar toda a frase, iremos utilizar Expressão Regular. Uma expressão regular é uma notação para representar padrões em string. Serve para validar entradas de dados ou fazer busca e extração de informações em textos.
+
+Para utilizar expressão regular no scanf usamos colchetes. Por exemplo:
+
+scanf("%[aeiou]", frase);
+
+No exemplo acima, a função scanf captura todos os caracteres que o usuário digitar que estejam dentro do colchetes, no exemplo as vogais em minúsculo, até que o usuário digite um caracter diferente dos que estão dentro dos colchetes. Se o usuário digitar aeuoaaoeuiogaeuioiuae o scanf captura apenas aeuoaaoeuio, ou seja, até a primeiro caracter fora dos que estão dentro dos colchetes. CUIDADO: Ele não pega todas as vogais dentro do texto, ele pega apenas as primeiras dentro do padrão até encontrar a primeira fora. Neste exemplo paeioaueity o scanf não irá capturar nenhum caracter pois logo a primeira está fora do padrão.
+
+O caracter ^ é usado em expressão regular para indicar a negação. Então a seguinte expressão regular irá capturar todos os caracteres que o usuário digitar até que o usuário digite uma das vogais dentro do colchete. 
+
+scanf("%[^aeiou]", frase);
+
+Se o usuário digitar Rtfgrwsdapfgtrd o scanf captura apenas Rtfgrwsd, ou seja, até a primeira vogal.
+
+Voltando ao nosso problema. Queremos que o scanf capture todo o texto digitado pelo usuário e armazene na cadeia. Para isso iremos usar a seguinte expressão regular:
+
+scanf("%[^\n]", frase);
+
+Essa expressão diz que o scanf deve capturar todos os caracteres que o usuário digitar até que o usuário digite o carácter '\n'. O caracter '\n' indica o salto de linha (pulo de linha), e a forma como digitamos esse salto de linha é ao tecla Enter. Então o scanf irá capturar tudo que o usuário digitar até que o usuário tecle Enter.
+
+CUIDADO ESPECIAL
+
+Sempre que no nosso programa tiver dois ou mais scanf e o scanf para uma cadeia de caracteres ou mesmo para um char não for o primeiro, devemos inserir um espaço em branco antes do sinal de % dentro do scanf. Logo, o scanf para capturar uma frase completa do usuário ficaria como mostrado abaixo:
+
+scanf(" %[^\n]", frase);
+
+Esse problema acontece devido ao tecla Enter, o carácter '\n' é lançado para o segundo scanf e se esse segundo scanf for de um char ou cadeia, o segundo scanf já armazena esse caracter '\n' como se fosse o valor digitado pelo usuário. O espaço em branco no inicio informa ao compilador para descartar qualquer '\n'.
+
+4 - Usando a função printf:
+
+Para fechar, para imprimir uma cadeia de caracteres usando o printf, usamos o %s dessa forma: printf("%s", frase);
+
+Última atualização: terça, 31 mai 2022, 12:43
+Seguir para...
